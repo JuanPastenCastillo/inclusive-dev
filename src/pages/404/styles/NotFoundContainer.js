@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import NotFoundImage from "../../../assets/notFound.webp"
+import NotFoundImage from "../../../assets/images/notFound.webp"
 
 const NotFoundContainer = styled.div`
   background-image: url(${NotFoundImage});

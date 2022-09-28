@@ -2,49 +2,20 @@
 *::after,
 *::before {
   box-sizing: border-box;
-  font-size: 3rem;
-}
-
-/* Waiting for other devs to accept this idea from the dessign team. */
-html {
-  font-size: 8px;
-  /* scroll-behavior: smooth; */
-}
-h1 {
-  font-size: 6rem;
-}
-h2 {
-  font-size: 5rem;
-}
-h3 {
-  font-size: 4rem;
-}
-h4 {
-  font-size: 3rem;
-}
-h5 {
-  font-size: 2rem;
-}
-h6 {
-  font-size: 1rem;
-}
-
-
-
-body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Poppins', sans-serif;
+}
+
+html{
+  font-size: 16px;
+}
+
+body {
   /* background-color: #282c34; */
   background-color: hsl(37.9, 65.5%, 94.3%);
-  /* font-size: calc(10px + 1.2vmin); */
-  color: black;
-  font-family: "Lato", sans-serif;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

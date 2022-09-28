@@ -1,10 +1,10 @@
 import styled, { keyframes } from "styled-components"
-import homeImage_background from "../../../assets/homeImage_background.png"
+import homeImage_background from "../../../assets/images/homeImage_background.png"
 
 const fromBelow = keyframes`
 0%
   {
-    transform:translateY(100vh)
+    transform:translateY(5%)
   }
 100%
 {
@@ -16,7 +16,7 @@ const fromBelow = keyframes`
 const fromAbove = keyframes`
 0%
   {
-    transform:translateY(-100vh);  
+    transform:translateY(-80%);  
   }
 100%
 {
@@ -59,7 +59,7 @@ const DisplayHomeImages = styled.div`
 
   div {
     position: absolute;
-    top: 5%;
+    top: 25%;
     left: 0;
     right: 0;
     display: flex;
@@ -68,38 +68,9 @@ const DisplayHomeImages = styled.div`
     align-items: center;
     opacity: 0;
 
-    h1 {
-      font-size: 16rem;
-    }
-
-    button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      
-      height: 48px;
-      
-      padding: 26px 0px;
-      
-      background: #000000;
-      border: 1px solid #000000;
-      border-radius: 8px;
-      
-      color: #ffffff;
-      
-      font-weight: 700;
-      
-      cursor: pointer;
-      
-    }
-
-    button > a {
+    & > a {
       all: unset;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0px 16px;
+      margin-top: 32px;
       
     }
   }

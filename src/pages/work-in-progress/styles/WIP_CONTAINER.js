@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import WorkInProgress from "../../../assets/workInProgressBg.webp"
+import WorkInProgress from "../../../assets/images/workInProgressBg.webp"
 
 export const WIP_CONTAINER = styled.div`
   height: 100vh;

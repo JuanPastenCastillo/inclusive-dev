@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react"
-import {HashLink} from "react-router-hash-link"
+import { HashLink } from "react-router-hash-link"
 import DisplayHomeImages from "./styles/DisplayHomeImages.js"
 import HeroImageWrapper from "./styles/HeroImageWrapper.js"
-import homeImage_communityPeople from "../../assets/homeImage_communityPeople.png"
+import homeImage_communityPeople from "../../assets/images/homeImage_communityPeople.png"
 import { Link } from "react-router-dom"
+import { H1 } from "../../components/ui/heading_body_text/HeaderFonts.js"
+import { BtnLarge } from "../../components/ui/buttons/general/ButtonStyled.js"
+
 
 const HeroImage = () => {
   const [moveImage, setMoveImage] = useState(false)
@@ -28,24 +31,25 @@ const HeroImage = () => {
     }
   }, [])
 
-  console.log("moveImage:", moveImage)
-  console.log("moveTextAndButton:", moveTextAndButton)
-
   return (
     <HeroImageWrapper>
       <DisplayHomeImages>
-        <div className={moveTextAndButton && "MoveTextAndButton"}>
-          <h1>Inclusion for all.</h1>
-          <button  > <HashLink to="#MainContent" smooth> FIND OUT MORE</HashLink> </button>
+        <div className={moveTextAndButton ? "MoveTextAndButton" : undefined}>
+          <H1 bold>Inclusion for all.</H1>
+          <HashLink to="#MainContent" smooth>
+            <BtnLarge> FIND OUT MORE</BtnLarge>
+          </HashLink>{" "}
         </div>
         <img
           src={homeImage_communityPeople}
           alt="A group of people greetings with their hands"
-          className={moveImage && "MoveImage"}
+          className={moveImage ? "MoveImage" : undefined}
         />
       </DisplayHomeImages>
 
-      <span><Link to="/work-in-progress">Not from NYC?</Link></span>
+      <span>
+        <Link to="/work-in-progress">Not from NYC?</Link>
+      </span>
     </HeroImageWrapper>
   )
 }

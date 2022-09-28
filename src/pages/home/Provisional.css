@@ -1,4 +1,5 @@
-.MainContentProvisional{
+.H2ContentProvisional{
+  position: relative;
   height:100vh;
   border: 4px crimson solid;
   display: flex;
