@@ -38,7 +38,6 @@ const SignupForm = () => {
   })
 
   const [passwordReveal, setPasswordReveal] = useState(false)
-
   const [success, setSuccess] = useState(false)
   const [emailAlreadyRegistered, setEmailAlreadyRegistered] = useState("")
 
@@ -212,7 +211,7 @@ const SignupForm = () => {
               </Caption>
             )}
             {emailAlreadyRegistered !== "" && (
-              <DisplayErrorComponent className="DisplayErrorFirst">
+              <DisplayErrorComponent className="CaptionInRedSF DisplayErrorFirst">
                 <ExclamationSvg />
 
                 <Caption>
