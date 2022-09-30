@@ -15,8 +15,7 @@ import {
 import { LoginCtx } from "../../context/LoginCtx"
 
 const NavBar = () => {
-
-  const { isLogin,setIsLogin, whoIsLogin } = useContext(LoginCtx)
+  const { isLogin, setIsLogin, whoIsLogin } = useContext(LoginCtx)
 
   const logoutHandler = () => {
     let dataAccount = JSON.parse(localStorage.getItem(whoIsLogin))
@@ -58,7 +57,9 @@ const NavBar = () => {
       {isLogin === true ? (
         <LoginComponent>
           <BtnSmall>My account</BtnSmall>
-          <Caption bold onClick={logoutHandler}>Log out</Caption>
+          <Caption bold onClick={logoutHandler}>
+            Log out
+          </Caption>
         </LoginComponent>
       ) : (
         <LoginComponent>
@@ -70,7 +71,6 @@ const NavBar = () => {
           </Link>
         </LoginComponent>
       )}
-
     </NavBarStyled>
   )
 }

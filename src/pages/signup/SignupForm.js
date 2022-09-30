@@ -56,21 +56,21 @@ const SignupForm = () => {
           "Content-type": "application/json; charset=UTF-8"
         }
       })
-      
-     // console.log('fetching:', fetching)
+
+      // console.log('fetching:', fetching)
 
       if (fetching.ok !== true) {
         throw new Error("Something happend")
       }
 
       const toJson = await fetching.json()
-     // console.log("toJson:", toJson)
+      // console.log("toJson:", toJson)
 
       let keyToPush = `INCLUSIVE_ACCOUNT_${email.value}`
-     // console.log("keyToPush:", keyToPush)
+      // console.log("keyToPush:", keyToPush)
 
       let isUserAlreayCreated = localStorage.getItem(keyToPush)
-     // console.log("isUserAlreayCreated:", isUserAlreayCreated)
+      // console.log("isUserAlreayCreated:", isUserAlreayCreated)
 
       if (isUserAlreayCreated === null) {
         let valueToAdd = {
@@ -96,7 +96,7 @@ const SignupForm = () => {
       setIsLogin(true)
       setSuccess(true)
     } catch (error) {
-     console.log("error:", error)
+      console.log("error:", error)
 
       // if (!error?.response) {
       //   setErrMsg("No server response")
@@ -114,6 +114,7 @@ const SignupForm = () => {
 
   const onChangeEmail = (e) => {
     const inputValue = e.target.value.trim().toLowerCase()
+    console.log('inputValue:', inputValue)
     let emailHasError = false
 
     if (
@@ -124,6 +125,8 @@ const SignupForm = () => {
       emailHasError = true
     }
 
+    console.log('emailHasError:', emailHasError)
+
     setEmail((prevState) => ({
       ...prevState,
       value: e.target.value,
@@ -133,6 +136,16 @@ const SignupForm = () => {
   }
 
   const handleFocusEmail = () => {
+
+    if (!email.touched && email.value === "") {
+      setEmail((prevState) => ({
+        ...prevState,
+        hasError: true,
+        touched: true
+      }))
+    }
+
+
     setEmail((prevState) => ({
       ...prevState,
       touched: true
@@ -156,9 +169,11 @@ const SignupForm = () => {
   }
 
   const handleFocusPassword = () => {
+
     setPassword((prevState) => ({
       ...prevState,
-      touched: true
+
+      touched: true,
     }))
   }
 
@@ -172,15 +187,27 @@ const SignupForm = () => {
         {success && <Navigate to="/" replace={true} />}
 
         <Form onSubmit={handleSubmit}>
+
           <H4_EMAIL_SIGNUP
             displayRedEmail={{
               emailAlreadyRegistered,
               hasError: email.hasError,
-              hasTouched: email.touched
+              hasTouched: email.touched,
             }}
           >
             Email
           </H4_EMAIL_SIGNUP>
+
+
+          {/* <H4_EMAIL_SIGNUP
+            displayRedEmail={{
+              emailAlreadyRegistered,
+              hasError: email.hasError,
+              hasTouched: email.touched,
+            }}
+          >
+            Email
+          </H4_EMAIL_SIGNUP> */}
 
           <StyleInputFirst
             customMargin={{
