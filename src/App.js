@@ -19,7 +19,17 @@ function App() {
 
   return (
     <AppWrapper>
-      <NavBar />
+      
+      
+      <div>
+        <h1>This is an old version of INCLUSIVE Project</h1>
+        
+        <h2>Please, visit the new version <a href="https://inclusive-next.vercel.app/" target="_blank">clicking here</a> or down below</h2>
+        
+        <a href="https://inclusive-next.vercel.app/" target="_blank">INCLUSIVE Proyect with NEXTjs</a>
+      </div>
+      
+      {/* <NavBar />
 
       <Routes>
         <Route path="/" element={<HomeIndex />} />
@@ -33,13 +43,13 @@ function App() {
           element={isLogin ? <Navigate to="/" replace={true} /> : <Signup />}
         />
         <Route path="work-in-progress" element={<WorkInProgress />} />{" "}
-        {/* Not used anymore */}
         <Route path="*" element={<NotFound />} />
       </Routes>
 
       <div className="FooterProvisional">
         <p>Footer</p>
-      </div>
+      </div> */}
+      
     </AppWrapper>
   )
 }
